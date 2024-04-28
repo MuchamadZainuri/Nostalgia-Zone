@@ -1,0 +1,637 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+@import url('https://fonts.cdnfonts.com/css/the-minion');
+
+:root {
+    --primary: #009CDE;
+    --orange: #F58732;
+    --red: #EE0024;
+    --light-color: #f9f9f9;
+    --dark-color: #a95f26;
+    --dark-red: #b9011c;
+    --black: #2D3240;
+    --gray: rgb(69, 69, 69);
+    --border: .2rem solid rgba(0, 0, 0, .1);
+    --border-hover: .2rem solid var(--gray);
+    --box-shadow: 0 .7rem 1rem rgba(0, 0, 0, .1);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+    transition: all .2s linear;
+    transition: width .2s none;
+    border: none;
+}
+
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--dark-color);
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.heading:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: .01rem;
+    background: rgba(0, 0, 0, .1);
+    z-index: -1;
+}
+
+.heading span {
+    font-size: 3rem;
+    padding: .5rem 2rem;
+    color: var(--black);
+    background: var(--light-color);
+    border: var(--border);
+}
+
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1.5rem 1.5rem;
+    border-radius: .7rem;
+    color: var(--light-color);
+    background-color: var(--red);
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+
+.btn:hover {
+    background-color: var(--dark-red);
+}
+
+
+.header .header-1 {
+    background-color: var(--primary);
+    padding: 1.5rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .header-1 .logo {
+    font-size: 2.4rem;
+    font-weight: bolder;
+    color: var(--light-color);
+    font-family: 'THE MINION', sans-serif;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+
+}
+
+.header .header-1 .logo img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    margin-right: 0.7rem;
+}
+
+.header .header-1 .search-form {
+    width: 50rem;
+    height: 4.7rem;
+    border: var(--border);
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: .7rem;
+}
+
+.header .header-1 .search-form input {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    height: 100%;
+    width: 100%;
+    text-transform: none;
+    color: var(--black);
+}
+
+.header .header-1 .search-form input:focus {
+    outline: none;
+}
+
+.header .header-1 .search-form label {
+    font-size: 2.3rem;
+    padding-right: 1.4rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .search-form label:hover {
+    color: var(--orange);
+}
+
+.header .header-1 .icons div,
+.header .header-1 .icons a {
+    font-size: 2.4rem;
+    margin-left: 4rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover {
+    color: var(--orange);
+}
+
+#search-btn {
+    display: none;
+}
+
+.header .header-2 {
+    background-color: var(--orange);
+}
+
+.header .header-2 .navbar {
+    text-align: center;
+}
+
+.header .header-2 .navbar a {
+    color: var(--light-color);
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.header .header-2 .navbar a:hover {
+    background-color: var(--dark-color);
+}
+
+.header .header-2.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.bottom-navbar {
+    text-align: center;
+    background: var(--orange);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: none;
+}
+
+.bottom-navbar a {
+    font-size: 2.5rem;
+    padding: 2.2rem;
+    margin: 0 2rem;
+    color: var(--light-color);
+}
+
+.bottom-navbar a:hover {
+    background-color: var(--dark-color);
+}
+
+section {
+    height: 78vh;
+    padding: 5rem 7%;
+}
+
+.home {
+    background: url("../image/bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.home .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+}
+
+.home .row .content {
+    flex: 1 1 40rem;
+}
+
+.home .row .toys-slider {
+    flex: 1 1 40rem;
+    text-align: center;
+}
+
+.home .row .toys-slider a img {
+    height: 38rem;
+}
+
+.home .row .toys-slider a:hover img {
+    transform: scale(.9);
+}
+
+.home .row .content h3 {
+    color: var(--black);
+    font-size: 4.5rem;
+}
+
+.home .row .content p {
+    color: var(--gray);
+    font-size: 1.5rem;
+    line-height: 2;
+    padding: 1rem 0;
+}
+
+.icons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+    height: fit-content;
+    padding: 3rem 7rem;
+}
+
+.icons-container .icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 2rem;
+}
+
+.icons-container .icons i {
+    font-size: 4rem;
+    color: var(--primary);
+}
+
+.icons-container .icons h3 {
+    font-size: 1.8rem;
+    color: var(--black);
+    padding-bottom: .5rem;
+}
+
+.icons-container .icons p {
+    font-size: 1.4rem;
+    color: var(--gray);
+}
+
+.rare-toys .rare-slider .box {
+    width: 25rem;
+    margin: 4rem 0;
+    position: relative;
+    overflow: hidden;
+    bottom: var(--border);
+    text-align: center;
+}
+
+.rare-toys .rare-slider .box:hover {
+    border: var(--border-hover);
+}
+
+.rare-toys .rare-slider .box .image {
+    padding: 1rem;
+    background: linear-gradient(15deg, #eee 30%, #fff 30.1%);
+}
+
+.rare-toys .rare-slider .box:hover .image {
+    transform: translateY(5rem);
+}
+
+.rare-toys .rare-slider .box .image img {
+    width: fit-content;
+    height: 20rem;
+}
+
+.rare-toys .rare-slider .box .icons {
+    border-bottom: var(--border-hover);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 1;
+    transform: translateY(-100%);
+}
+
+.rare-toys .rare-slider .box:hover .icons {
+    transform: translateY(0%);
+}
+
+.rare-toys .rare-slider .box .icons a {
+    color: var(--black);
+    font-size: 2.2rem;
+    padding: 1.3rem 1.5rem;
+}
+
+.rare-toys .rare-slider .box .icons a:hover {
+    background-color: var(--red);
+    color: var(--light-color);
+}
+
+.rare-toys .rare-slider .box .content {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+}
+
+.rare-toys .rare-slider .box .content h3 {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.rare-toys .rare-slider .box .content .price {
+    font-size: 2.2rem;
+    color: var(--black);
+    padding-top: 1rem;
+}
+
+.rare-toys .rare-slider .box .content .price span {
+    font-size: 1.5rem;
+    color: var(--gray);
+    text-decoration: line-through;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    border: var(--border-hover);
+    height: 4rem;
+    width: 4rem;
+    color: var(--black);
+    background: var(--light-color);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 2rem;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: var(--black);
+    color: var(--light-color);
+}
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.2rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--gray);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a.email {
+    text-transform: none;
+}
+
+.footer .box-container .box a i {
+    color: var(--red);
+    padding-right: .5rem;
+}
+
+.footer .box-container .box a:hover i {
+    padding-right: 2rem;
+}
+
+.footer .box-container .box .map {
+    width: 100%;
+}
+
+.footer .share {
+    padding-top: 6rem;
+    text-align: center;
+}
+
+.footer .share a {
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: var(--light-color);
+    background: var(--red);
+    margin: 0 1rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover {
+    background: var(--black);
+}
+
+footer .credit {
+    border-top: var(--border);
+    margin-top: 6rem;
+    padding: 2.5rem 1rem;
+    font-size: 2rem;
+    color: var(--light-color);
+    text-align: center;
+    background-color: var(--primary);
+}
+
+footer .credit span a {
+    color: var(--black);
+    font-weight: bolder;
+}
+
+.loader-container{
+    position: fixed;
+    top: 0;left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-container.active{
+    display: none;
+}
+
+.loader-container iframe{
+    height: 25rem;
+}
+
+
+@media (max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header .header-1 {
+        padding: 2rem;
+    }
+
+    .header .header-1 .search-form {
+        width: 40rem;
+        margin-left: 2rem;
+    }
+
+    .header .header-1 .icons div,
+    .header .header-1 .icons a {
+        margin-left: 3rem;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    html {
+        scroll-padding-top: 0;
+    }
+
+    body {
+        padding-bottom: 6rem;
+    }
+
+    .header .header-2 {
+        display: none;
+    }
+
+    .bottom-navbar {
+        display: block;
+    }
+
+    #search-btn {
+        display: inline-block;
+    }
+
+    .header .header-1 .icons div,
+    .header .header-1 .icons a {
+        margin-left: 2rem;
+    }
+
+    .header .header-1 {
+        box-shadow: var(--box-shadow);
+        position: relative;
+    }
+
+    .header .header-1 .search-form {
+        position: absolute;
+        top: -115%;
+        right: 2rem;
+        width: 90%;
+        box-shadow: var(--box-shadow);
+        margin: 0 auto;
+    }
+
+    .header .header-1 .search-form.active {
+        top: 115%;
+    }
+
+    .home .row .content {
+        text-align: center;
+    }
+
+    .home .row .content h3 {
+        font-size: 3.5rem;
+    }
+
+    section {
+        height: 100%;
+    }
+}
+
+@media (max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+
+    section {
+        height: 100%;
+    }
+
+    section.header {
+        padding: 5rem 4rem;
+    }
+
+    section.rare-toys {
+        padding: 2rem 4rem;
+    }
+
+    section#animal-kaiser,
+    section#crazy-birds,
+    section#tamiya,
+    section#hotwheels,
+    section#beyblade {
+        margin-top: -11rem;
+        padding: 0 4rem;
+    }
+
+    .home .row .toys-slider a img {
+        height: 28rem;
+    }
+
+    .icons-container {
+        margin: 2rem auto;
+    }
+
+    section.footer {
+        padding: 0 4rem;
+    }
+
+    .footer .box-container .box h3 {
+        font-size: 2.7rem;
+        color: var(--black);
+        padding: 1rem 0;
+    }
+
+    .footer .box-container .box a {
+        display: block;
+        font-size: 1.9rem;
+        color: var(--gray);
+        padding: 1rem 0;
+    }
+
+    .footer .box-container .box a.email {
+        margin-bottom: 1rem;
+    }
+
+    footer .credit {
+        font-size: 1.8yrem;
+    }
+
+
+        .header .header-1 .icons a{
+            display: none;
+        }
+
+}
